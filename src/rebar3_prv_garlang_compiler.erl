@@ -57,6 +57,6 @@ format_error(Reason) ->
     io_lib:format("~p", [Reason]).
 
 gar_compile(_Opts, Source, OutDir) ->
-    OutFile = filename:join([OutDir, "priv", filename:basename(Source)]),
+    OutFile = filename:join([OutDir, "ebin", filename:basename(Source)]),
     filelib:ensure_dir(OutFile),
-    rebar_utils:sh(io_lib:format("gar compile ~s -o ~s", [Source, OutDir]), []).
+    rebar_utils:sh(io_lib:format("gar compile -o ~s -beam ~s", [OutFile, Source]), []).
