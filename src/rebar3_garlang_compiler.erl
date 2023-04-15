@@ -4,5 +4,5 @@
 
 -spec init(rebar_state:t()) -> {ok, rebar_state:t()}.
 init(State) ->
-    {ok, State1} = rebar3_prv_ex_compiler:init(State),
+    {ok, State1} = rebar3_prv_garlang_compiler:init(State),
     {ok, State1}.
