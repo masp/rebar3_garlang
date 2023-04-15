@@ -12,7 +12,7 @@ Add the plugin to your `rebar.config`:
 
 ```
 {plugins, [
-    {rebar3_garlang_compiler, ".*", {git, "https://github.com/masp/rebar3_garlang.git", {branch, "master"}}}
+    {rebar3_garlang_compiler, ".*", {git, "https://github.com/masp/rebar3_garlang.git", {branch, "main"}}}
 ]}.
 ```
 
