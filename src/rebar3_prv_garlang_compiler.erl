@@ -26,7 +26,7 @@ init(State) ->
 
 -spec do(rebar_state:t()) -> {ok, rebar_state:t()} | {error, string()}.
 do(State) ->
-    rebar3_api:debug("Compiling gar files", []),
+    rebar_api:debug("Compiling gar files", []),
     Apps =
         case rebar_state:current_app(State) of
             undefined ->
@@ -44,7 +44,7 @@ do(State) ->
             CompileFun = fun(Source, Opts1) ->
                 gar_compile(Opts1, Source, OutDir)
             end,
-            rebar3_api:debug("Compiling gar files: ~p", [FoundFiles]),
+            rebar_api:debug("Compiling gar files: ~p", [FoundFiles]),
             rebar_base_compiler:run(Opts, [], FoundFiles, CompileFun)
         end
      || AppInfo <- Apps
