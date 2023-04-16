@@ -1,7 +1,7 @@
 rebar3_garlang_compiler
 =====
 
-Extends rebar3 to compile .gar files using the gar compiler.
+Extends rebar3 to compile .gar files.
 
 Installation
 ----
@@ -25,8 +25,12 @@ $ rebar3 gar compile
 <Plugin Output>
 ```
 
-Or add it as a compile hook:
+Add it as a compile hook so you don't have to type it every time:
 
 ```
-{provider_hooks, [{pre, [{compile, {gar, compile}}]}]}.
+{provider_hooks, [
+    {pre, [
+        {compile, {gar, compile}}
+    ]}
+]}.
 ```
